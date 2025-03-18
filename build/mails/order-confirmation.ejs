@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #181818;
+        color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 40px;
+        background-color: #222;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+      }
+      .message-sm {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .message-sm > h1 {
+        font-size: 30px;
+        font-weight: 700;
+        color: #f9a825;
+        margin-bottom: 10px;
+      }
+      .message-sm > p {
+        font-size: 16px;
+        color: #bdbdbd;
+      }
+      .course-info {
+        background-color: #333;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+      .course-info > h4 {
+        color: #f9a825;
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      table tr:first-child td {
+        padding-top: 10px;
+      }
+      td {
+        padding: 15px;
+        text-align: left;
+        font-size: 16px;
+        border-bottom: 1px solid #f1f1f1;
+      }
+      td.col-2 {
+        width: 50%;
+        font-weight: 500;
+        color: #f1f1f1;
+      }
+      .total {
+        font-size: 20px;
+        font-weight: 700;
+        color: #f9a825;
+        text-align: right;
+        margin-top: 20px;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 14px;
+        color: #bdbdbd;
+      }
+      .footer > p > a {
+        text-decoration: none;
+        color: #f9a825;
+      }
+      .footer > p > a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="message-sm">
+        <h1>Your ELearning Order is Confirmed!</h1>
+        <p>Thank you for your purchase! We’re thrilled to have you with us.</p>
+      </div>
+
+      <div class="course-info">
+        <h4>Order Details</h4>
+        <table>
+          <tr>
+            <td class="col-2">Order #:</td>
+            <td><%= order._id %></td>
+          </tr>
+          <tr>
+            <td class="col-2">Order Date:</td>
+            <td><%= order.date %></td>
+          </tr>
+          <tr>
+            <td class="col-2">Course Name:</td>
+            <td><%= order.name %></td>
+          </tr>
+          <tr>
+            <td class="col-2">Quantity:</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td class="col-2">Price:</td>
+            <td>$<%= order.price %></td>
+          </tr>
+        </table>
+
+        <div class="total">
+          <p>Total: $<%= order.price %></p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          If you have any questions, feel free to reach out to us at
+          <a href="mailto:support@shiksha.com">support@shiksha.com</a>.
+        </p>
+        <p>&copy; 2024 ELearning. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

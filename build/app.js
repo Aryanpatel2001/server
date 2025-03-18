@@ -22,7 +22,7 @@ exports.app.use((0, cookie_parser_1.default)());
 // Adjust the size as per your needs
 exports.app.use((0, cors_1.default)({
     // origin: ["https://lernify1.vercel.app/"], // Adjust this to your frontend domain
-    origin: ["http://localhost:3000"], // Adjust this to your frontend domain
+    origin: ["https://lernify1.vercel.app"], // Adjust this to your frontend domain
     credentials: true, // Allow sending cookies
 }));
 const limiter = (0, express_rate_limit_1.rateLimit)({

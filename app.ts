@@ -19,7 +19,7 @@ app.use(cookieParser());
 app.use(
   cors({
     // origin: ["https://lernify1.vercel.app/"], // Adjust this to your frontend domain
-    origin: ["http://localhost:3000"], // Adjust this to your frontend domain
+    origin: ["https://lernify1.vercel.app"], // Adjust this to your frontend domain
     credentials: true, // Allow sending cookies
   })
 );
