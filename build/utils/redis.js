@@ -10,4 +10,14 @@ const redisClient = () => {
     }
     throw new Error("Redis connection failed");
 };
-exports.redis = new ioredis_1.Redis(redisClient());
+// export const redis = new Redis(redisClient(), {
+//   maxRetriesPerRequest: 100, // optional, reduce retry time
+//   tls: {}, // Upstash requires this for TLS connection
+// });
+exports.redis = new ioredis_1.Redis(redisClient(), {
+    host: process.env.REDIS_HOST, // e.g., 'your-host.upstash.io'
+    port: 6379,
+    password: process.env.REDIS_PASSWORD,
+    tls: {}, // Required for secure connection to Upstash
+    maxRetriesPerRequest: null,
+});
